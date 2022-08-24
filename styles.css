@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,100;1,300&display=swap');
+
+
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+#header{
+     width: 100vw;
+     height: 70vh;
+     padding: 20px 5rem;
+     margin-bottom: 80px;
+}
+
+#nav-bar{
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 10px;
+}
+
+#logo{
+     background: #fff;
+}
+
+.heading{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+span{
+     background: #000;
+     color: #fff;
+     margin: 0 10px;
+     padding: 10px;
+     border-radius: 5px;
+}
+
+.icons{
+     width: 5em;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+}
+
+#hero{
+     padding: 0;
+     margin: 20px 0;
+     display: flex;
+     flex-direction: column;
+}
+
+#heading-box{
+     width: 100%;
+     padding: 0;
+     margin-bottom: -20px;
+     padding: 10px 25px;
+}
+
+#heading{
+     font-family: 'Roboto';
+}
+
+#details{
+     display: flex;
+     align-items: center;
+     margin: 0;
+     padding: 2em 0;
+}
+
+#hot-topics{
+     width: 70%;
+     height: 400px;
+     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 42.25%, rgba(0, 0, 0, 0.65) 100%), url('images/swim.jpg');
+     background-position: center;
+     background-size: cover;
+     color: #fff;
+     margin: 0 20px;
+     border-radius: 5px;
+     position: relative;
+     padding: 20px;
+}
+
+.news-report{
+     position: absolute;
+     width: 543px;
+     height: 144px;
+     left: 2em;
+     top: 45%;
+     padding-right: 5em;
+}
+
+.news-details{
+     position: absolute;
+     top: 80%;
+     left: 2em;
+     margin-top: 5px;
+     display: flex;
+     align-items: center;
+     width: 200px;
+     font-weight: 300;
+}
+
+.text{
+     font-family: 'Roboto';
+     margin-right: 20px;
+}
+
+#text-details{
+     width: 25%;
+     font-family: serif;
+     font-weight: 500;
+     height: 400px;
+     padding: 20px 0;
+     margin: 20px 30px 20px 30px;
+}
+
+.bold{
+     background: transparent;
+     color: #000;
+     font-size: 35px;
+     padding: 0;
+     margin: 0;
+     font-family: serif;
+     font-weight: 100;
+}
+
+#text-details p{
+     line-height: 30px;
+     font-size: 25px;
+     font-weight: 200;
+     padding-right: 50px;
+     color: #949494;
+}
+
+#news-content{
+     padding: 20px 5rem;
+}
+
+#news-card-container{
+     width: 100%;
+     padding: -10px;
+}
+
+.news-heading{
+     width: 100%;
+     padding: 10px 25px;
+}
+
+.latest-news{
+     font-family: 'Roboto';
+}
+
+.news-card-box{
+     padding: 0 5px;
+     display: flex;
+     flex-wrap: nowrap;
+     align-items: center;
+}
+
+.news-card{
+     margin: 15px;
+     width: 300px;
+     height: 300px;
+     display: flex;
+     flex-direction: column;
+}
+
+.news-image{
+     width: 100%;
+     height: 250px;
+     background: url('images/fencing.jpg');
+     background-size: cover;
+     background-position: center;
+     border-radius: 5px;
+     margin-bottom: 20px;
+}
+
+.news-card-title{
+     margin-bottom: 20px;
+}
+
+.title-text{
+     font-size: 28px;
+     font-family: serif;
+}
+
+.news-card-timeline{
+     width: 80%;
+     display: flex;
+     align-items: center;
+}
+
+.card-text{
+     margin-right: 20px;
+     color: #949494;
+     font-weight: 500;
+     font-family: 'Roboto';
+}
