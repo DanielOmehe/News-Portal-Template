@@ -160,11 +160,12 @@ span{
      display: flex;
      flex-wrap: nowrap;
      align-items: center;
+     align-items: center;
 }
 
 .news-card{
-     margin: 15px;
-     width: 300px;
+     margin: 20px;
+     width: 30%;
      height: 300px;
      display: flex;
      flex-direction: column;
