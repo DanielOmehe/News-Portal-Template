@@ -14,12 +14,13 @@
                     <h3 class="heading"><span>News</span> Portal</h3>
                </div>
                <div class="icons">
-                    <img src="images/search.svg" alt="" class="search-button">
-                    <img src="images/bars.svg" alt="" class="search-button">
+                    <input type="text" id="search">
+                    <img class="button search" src="images/search.svg" alt="" class="search-button">
+                    <img src="images/bars.svg" alt="" class="button bars">
                </div>
           </nav>
 
-          <div id="hero">
+          <div id="news-headline">
                <div id="heading-box">
                     <h1 id="heading">Hot Topics</h1>
                </div>
@@ -34,7 +35,7 @@
                          </div>
                     </div>
                     <div id="text-details">
-                         <p><span class="bold">Nisi</span>, sagittis aliquet sit rutrum. Nunc, id vestibulum quam ornare adipiscing. Pellentesque sed turpis nunc gravida pharetra, sit nec vivamus pharetra. Velit, dui, egestas nisi, elementum mattis mauris, magnis. Massa tortor nibh nulla condimentum imperdiet scelerisque... read more</p>
+                         <p><span class="bold">Nisi</span>, sagittis aliquet sit rutrum. Nunc, id vestibulum quam ornare adipiscing. Pellentesque sed turpis nunc gravida pharetra, sit nec vivamus pharetra. Velit, dui, egestas nisi, elementum mattis mauris, magnis. Massa tortor nibh nulla condimentum imperdiet scelerisque... <a href="#" class="story">read more</a></p>
                     </div>
                </div>
           </div>
@@ -45,87 +46,13 @@
                     <h1 class="latest-news">Latest News</h1>
                </div>
                <div class="news-card-group">
-                    <div class="news-card">
-                         <div class="news-image"></div>
-                         <div class="news-card-title">
-                              <h2 class="title-text"><a href="news.html"> News Title Lorem Ipsum Dolor Sit Amet</a></h2>
-                         </div>
-                         <div class="news-card-timeline">
-                              <small class="card-text">1 Hour Ago</small>
-                              <small class="card-text">CNN Indonesia</small>
-                         </div>
-                    </div>
-                    <div class="news-card">
-                         <div class="news-image"> </div>
-                         <div class="news-card-title">
-                              <h2 class="title-text"><a href=""> News Title Lorem Ipsum Dolor Sit Amet</a></h2>
-                         </div>
-                         <div class="news-card-timeline">
-                              <small class="card-text">1 Hour Ago</small>
-                              <small class="card-text">CNN Indonesia</small>
-                         </div>
-                    </div>
-                    <div class="news-card">
-                         <div class="news-image"></div>
-                         <div class="news-card-title">
-                              <h2 class="title-text"><a href=""> News Title Lorem Ipsum Dolor Sit Amet</a></h2>
-                         </div>
-                         <div class="news-card-timeline">
-                              <small class="card-text">1 Hour Ago</small>
-                              <small class="card-text">CNN Indonesia</small>
-                         </div>
-                    </div>
-                    <div class="news-card">
-                         <div class="news-image"></div>
-                         <div class="news-card-title">
-                              <h2 class="title-text"><a href=""> News Title Lorem Ipsum Dolor Sit Amet</a></h2>
-                         </div>
-                         <div class="news-card-timeline">
-                              <small class="card-text">1 Hour Ago</small>
-                              <small class="card-text">CNN Indonesia</small>
-                         </div>
-                    </div>
-                    <div class="news-card">
-                         <div class="news-image"></div>
-                         <div class="news-card-title">
-                              <h2 class="title-text"><a href=""> News Title Lorem Ipsum Dolor Sit Amet</a></h2>
-                         </div>
-                         <div class="news-card-timeline">
-                              <small class="card-text">1 Hour Ago</small>
-                              <small class="card-text">CNN Indonesia</small>
-                         </div>
-                    </div>
-                    <div class="news-card">
-                         <div class="news-image"></div>
-                         <div class="news-card-title">
-                              <h2 class="title-text"><a href=""> News Title Lorem Ipsum Dolor Sit Amet</a></h2>
-                         </div>
-                         <div class="news-card-timeline">
-                              <small class="card-text">1 Hour Ago</small>
-                              <small class="card-text">CNN Indonesia</small>
-                         </div>
-                    </div>
-                    <div class="news-card">
-                         <div class="news-image"></div>
-                         <div class="news-card-title">
-                              <h2 class="title-text"><a href=""> News Title Lorem Ipsum Dolor Sit Amet</a></h2>
-                         </div>
-                         <div class="news-card-timeline">
-                              <small class="card-text">1 Hour Ago</small>
-                              <small class="card-text">CNN Indonesia</small>
-                         </div>
-                    </div>
-                    <div class="news-card">
-                         <div class="news-image"></div>
-                         <div class="news-card-title">
-                              <h2 class="title-text"><a href=""> News Title Lorem Ipsum Dolor Sit Amet</a></h2>
-                         </div>
-                         <div class="news-card-timeline">
-                              <small class="card-text">1 Hour Ago</small>
-                              <small class="card-text">CNN Indonesia</small>
-                         </div>
-                    </div>
                </div>
+          </section>
+          <section id="search-list">
+               <h3 id="total-results">Search results for, total results()</h3>
+               <div id="error"></div>
+
+               <div id="search-list-group"></div>
           </section>
      </main>
      <footer id="footer">

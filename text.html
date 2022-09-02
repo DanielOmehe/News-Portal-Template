@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <!-- <style>
+          #daniel{
+               color: green;
+          }
+          #michael{
+               color: cornflowerblue;
+          }
+          #liam{
+               color: coral;
+          }
+          #jerry{
+               color: chartreuse;
+          }
+          #jude{
+               color: greenyellow;
+          }
+          li{
+               list-style: none;
+          }
+     </style> -->
+</head>
+<body>
+     <!-- <div class="news-card">
+          <div class="news-image"></div>
+          <div class="news-card-title">
+               <h2 class="title-text"><a href=""> News Title Lorem Ipsum Dolor Sit Amet</a></h2>
+          </div>
+          <div class="news-card-timeline">
+               <small class="card-text">1 Hour Ago</small>
+               <small class="card-text">CNN Indonesia</small>
+          </div>
+     </div> -->
+     <ul id="list"></ul>
+     <script>
+          const getSource = (url) => {
+               fetch(url).then(result => result.json()).then(data => {
+                    let {articles} = data;
+
+                    for(let article of articles){
+                         console.log(article.title)
+                    }
+               })
+          }
+
+          getSource('https://newsapi.org/v2/everything?q=sports&apiKey=983b7378865f479eb7304932bbce64e7')
+     </script>
+</body>
+</html>
