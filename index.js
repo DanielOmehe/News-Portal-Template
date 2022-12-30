@@ -7,12 +7,13 @@ const newsHeadline = document.getElementById('news-headline');
 const newsContent = document.getElementById('news-content');
 const searchError = document.getElementById('error');
 
-searchInput.addEventListener('focus', () => {
+searchInput.addEventListener('focus', (e) => {
      searchInput.classList.add('expand')
 });
 
-searchInput.addEventListener('blur', () => {
-     searchInput.classList.remove('expand')
+searchInput.addEventListener('blur', (e) => {
+     if(e.target.value === "" ) searchInput.classList.remove('expand');
+     else e.preventDefault()
 });
 
 //Use fetch to get top headlines 
@@ -59,10 +60,6 @@ searchButton.addEventListener('click', () => {
      console.log(totalSearchResults);
 
      searchList.classList.add('show')
-
-     // newsHeadline.classList.add('hide');
-     // newsContent.classList.add('hide');
-     // searchList.classList.add('show');
 
      const getSearchresults = (url) => {
           fetch(url)
