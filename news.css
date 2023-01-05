@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,100;1,300&display=swap');
 
-
 *{
      margin: 0;
      padding: 0;
@@ -45,7 +44,7 @@ span{
      margin-right: 10px;
 }
 
-.icons{
+.search-box{
      width: 5em;
      display: flex;
      align-items: center;
