@@ -13,6 +13,7 @@ let search = false,
 showSearch = false;
 
 menuBtn.addEventListener('click', (e)=>{
+     search = !search
      searchBox.classList.toggle('open-search');
 });
 
@@ -40,38 +41,45 @@ searchInput.addEventListener('blur', (e) => {
      else e.preventDefault()
 });
 
-const getLatestNews = (url) => {
-     fetch(url)
-     .then(result => result.json())
-     .then(data => {
-          let {articles} = data;
+const getLatestNews = async (url) => {
+     try{
+          const response = await fetch(url)
 
-          for(let {publishedAt, source, title, url, urlToImage} of articles){
+          if(response.ok){
+               const {data} = await response.json();
 
-               const newsCardGroup = document.querySelector('.news-card-group');
+               for(let {author, imageUrl, time, title, url} of data){
 
-               newsCardGroup.innerHTML += `
-                    <div class="news-card">
-                         <div class="news-image">
-                              <img src="${urlToImage}" alt="photo" class="image">
+                    const newsCardGroup = document.querySelector('.news-card-group');
+     
+                    newsCardGroup.innerHTML += `
+                         <div class="news-card">
+                              <div class="news-image">
+                                   <img src="${imageUrl}" alt="photo" class="image">
+                              </div>
+                              <div class="news-card-title">
+                                   <h2 class="title-text"><a target=_blank href="${url}">${title}</a></h2>
+                              </div>
+                              <div class="news-card-timeline">
+                                   <small class="card-text">${time}</small>
+                                   <small class="card-text">${author}</small>
+                               </div>
                          </div>
-                         <div class="news-card-title">
-                              <h2 class="title-text"><a target=_blank href="${url}">${title}</a></h2>
-                         </div>
-                         <div class="news-card-timeline">
-                              <small class="card-text">${publishedAt}</small>
-                              <small class="card-text">${source.name}</small>
-                          </div>
-                    </div>
-               `
+                    `
+               }
           }
-     });
+          else{
+               throw new Error('There was an error while fetching news')
+          }
+     }
+     catch(error){
+          throw new Error(`Something went wrong: ${error}`)
+     }
 };
 
-getLatestNews('https://newsapi.org/v2/everything?q=medicine&pageSize=12&apiKey=983b7378865f479eb7304932bbce64e7');
+getLatestNews(`https://inshorts.deta.dev/news?category=all`);
 
-searchButton.addEventListener('click', (e) => {
-
+searchButton.addEventListener('click', (e) =>{
      const searchText = searchInput.value.trim();
 
      if(searchText === '' && !search){
@@ -92,40 +100,39 @@ searchButton.addEventListener('click', (e) => {
 
      const totalSearchResults = document.getElementById('total-results');
 
-     searchList.classList.add('show')
+     const getSearchresults = async (url)=>{
+          try{
+               const response = await fetch(url);
+               if(response.ok){
+                    const { data } = await response.json();
 
-     const getSearchresults = (url) => {
-          fetch(url)
-          .then(result => result.json())
-          .then(data => {
+                    searchList.classList.add('show');
 
-               totalSearchResults.innerText = `
-               Search results for ${searchText}, total results(${data.totalResults})
-               `
+                    totalSearchResults.innerHTML = `Search results for ${searchText}, total results(${data.length})`
 
-               let {articles} = data;
+                    data.map(({author, imageUrl, time, title, url})=>{
+                         searchListGroup.innerHTML += `
 
-               for(let {publishedAt, source, title, url, urlToImage} of articles){
-
-                    let {id, name} = source
-
-                     searchListGroup.innerHTML += `
                          <div class="news-card">
                               <div class="news-image">
-                                   <img src="${urlToImage}" alt="" class="image">
+                                   <img src="${imageUrl}" alt="" class="image">
                               </div>
                               <div class="news-card-title">
                                    <h2 class="title-text"><a target=_blank href="${url}">${title}</a></h2>
                               </div>
                               <div class="news-card-timeline">
-                                   <small class="card-text">${publishedAt}</small>
-                                   <small class="card-text">${name}</small>
+                                   <small class="card-text">${time}</small>
+                                   <small class="card-text">${author}</small>
                               </div>
                          </div>
-                    `
+                         `
+                    })
+                    search = false
                }
-          });
-     };
+          }catch(error){
+               throw new Error(`Something went Wrong: ${error}`)
+          }
+     }
 
-     getSearchresults(`https://newsapi.org/v2/everything?q=${searchText}&apiKey=983b7378865f479eb7304932bbce64e7`);
-});
+     getSearchresults(`https://inshorts.deta.dev/news?category=${searchText}`)
+})
